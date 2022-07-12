@@ -61,10 +61,11 @@ module.exports = {
       provider: () => {
         const mnemonic = process.env["MNEMONIC"];
         const project_id = process.env["INFURA_PROJECT_ID"];
-        return new HDWalletProvider(
+        const p = new HDWalletProvider(
           mnemonic,
           `https://rinkeby.infura.io/v3/${project_id}`
         );
+        return p;
       },
       network_id: "*"
     }
